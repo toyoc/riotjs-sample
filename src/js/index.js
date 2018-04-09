@@ -1,5 +1,7 @@
 const riot = require('riot')
-import app from '../modules/app/app'
+require('../modules/app/app')
+require('../modules/button-group/button-group')
+require('../modules/vote-button/vote-button')
 
 console.log('index.js')
 
