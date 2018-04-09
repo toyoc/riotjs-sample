@@ -1,9 +1,9 @@
 vote-button
-  button
+  button(onclick="{ vote }")
     img(src="{opts.image}" width="{opts.width}" height="{opts.height}")
     span.name
-      <yield />
-    span.count { opts.count }
+      yield.
+    span.count { this.count }
   style.
     button {
       border-radius: 6px;
@@ -23,4 +23,10 @@ vote-button
       background: #333;
       color: white;
       margin-left: 10px;
+    }
+  script.
+    this.count = !!opts.count ? opts.count : 0
+    this.vote = () => {
+      this.count++
+      this.update()
     }
