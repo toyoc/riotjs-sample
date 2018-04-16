@@ -28,5 +28,6 @@ vote-button
     this.count = !!opts.count ? opts.count : 0
     this.vote = () => {
       this.count++
+      opts.observable.trigger(opts.trigger, this.count)
       this.update()
     }
